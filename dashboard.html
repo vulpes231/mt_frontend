@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="assets/js/dash.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <script src="assets/js/dash.js" type="module"></script>
     <title>MetaBank | Dashboard</title>
   </head>
   <body>
@@ -22,13 +26,13 @@
           <a href="">Service center</a>
         </li>
       </ul>
-      <div>
+      <a id="logout" href="">
         <span class="material-symbols-outlined"> logout </span>
         <p>Logout</p>
-      </div>
+      </a>
     </header>
     <main>
-      <div class="welcome">Welcome User</div>
+      <div class="welcome">Welcome <span id="user"></span></div>
       <div class="dash-header">
         <div>
           <p>Last login 07/17/2023 at 5:09pm E.T</p>
