@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="assets/js/signup.js"></script>
+    <script src="assets/js/signup.js" type="module"></script>
     <title>MetaBank | Enroll</title>
   </head>
   <body>
@@ -14,7 +14,7 @@
       </a>
     </header>
     <main>
-      <form action="">
+      <form id="signup-form" action="">
         <h3>Welcome back!</h3>
         <input
           type="text"
@@ -69,6 +69,8 @@
           already have an account?
           <span><a href="login.html">Login Now</a></span>
         </p>
+        <div id="error"></div>
+        <div id="success"></div>
       </form>
     </main>
   </body>
