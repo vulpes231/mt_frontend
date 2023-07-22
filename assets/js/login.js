@@ -20,7 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
       let msg = data.message;
       displayError(msg);
     } else if (data.status === 401) {
-      displayError(msg);
+      console.log(data);
+      displayError(data.message);
     } else if (data.status === 200) {
       const accessToken = data.accessToken;
       sessionStorage.setItem("username", username);
