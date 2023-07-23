@@ -3,39 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/login.css" />
     <script src="assets/js/login.js" type="module"></script>
     <title>MetaBank | Login</title>
   </head>
   <body>
     <header>
-      <a href="/" class="logo">
-        <img src="assets/img/logo.png" alt="logo-image" width="50" />
-        <h1>meta <span>bank</span></h1>
-      </a>
+      <nav>
+        <a href="/" class="logo">
+          <img src="assets/img/logo.png" alt="logo-image" width="50" />
+          <h1>meta <span>bank</span></h1>
+        </a>
+      </nav>
     </header>
     <main>
       <form id="login-form" action="">
-        <h3>Welcome back!</h3>
-        <input
-          type="text"
-          id="username"
-          placeholder="username"
-          autocomplete="off"
-        />
-        <input type="password" id="password" placeholder="password" />
-
-        <div class="rem-div">
-          <input type="checkbox" id="remember" />
-          <p>Remember me</p>
+        <h3>Login to your account.</h3>
+        <div class="usr">
+          <input
+            type="text"
+            id="username"
+            placeholder="username"
+            autocomplete="off"
+          />
+          <i class="bx bxs-user icon"></i>
         </div>
+
+        <div class="usr">
+          <input type="password" id="password" placeholder="password" />
+          <i class="bx bx-key icon"></i>
+        </div>
+
+        <div class="action-el">
+          <div class="rem-div">
+            <input type="checkbox" id="remember" />
+            <p>Remember me</p>
+          </div>
+          <a href="#">Forgot email or password</a>
+        </div>
+        <div id="error"></div>
+        <div id="success"></div>
         <button>Login</button>
-        <a href="#">forgot email or password</a>
+
         <p>
           Don't have an account?
           <span><a href="signup.html">Enroll Now</a></span>
         </p>
-        <div id="error"></div>
-        <div id="success"></div>
       </form>
     </main>
   </body>

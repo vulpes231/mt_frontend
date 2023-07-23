@@ -3,56 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+    <link rel="stylesheet" href="assets/css/dash.css" />
     <script src="assets/js/dash.js" type="module"></script>
     <title>MetaBank | Dashboard</title>
   </head>
   <body>
     <header>
-      <ul>
-        <li>
-          <a href="">Accounts</a>
-        </li>
-        <li>
-          <a href="">Transfer</a>
-        </li>
-        <li>
-          <a href="">Payments</a>
-        </li>
-        <li>
-          <a href="">Service center</a>
-        </li>
-      </ul>
-      <a id="logout" href="">
-        <span class="material-symbols-outlined"> logout </span>
-        <p>Logout</p>
-      </a>
+      <nav>
+        <a href="/" class="logo">
+          <img src="assets/img/logo.png" alt="logo-image" width="50" />
+          <h1>meta<span>bank</span></h1>
+        </a>
+        <i class="bx bx-menu menu-btn"></i>
+        <ul>
+          <li>
+            <a href="">Accounts</a>
+          </li>
+          <li>
+            <a href="">Transfer</a>
+          </li>
+          <li>
+            <a href="">Payments</a>
+          </li>
+          <li>
+            <a href="">Service center</a>
+          </li>
+        </ul>
+        <a class="logout" id="logout" href="">
+          <i class="bx bx-log-in"></i>
+          <p>Logout</p>
+        </a>
+      </nav>
     </header>
     <main>
-      <div class="welcome">Welcome <span id="user"></span></div>
-
-      <div class="dash-body">
+      <section class="dash-head">
         <div class="title">
+          <div class="welcome">Welcome <span id="user"></span></div>
+          <p>Last login: 10/02/2023 10:15</p>
           <h3>Cash Accounts <span id="counter">(0)</span></h3>
         </div>
         <div class="accounts">
           <div>
-            <span id="account-type">FB </span>
-            <span id="account-no">...</span>
+            <span class="account-type" id="account-type"></span>
+            <span id="account-no"></span>
           </div>
-          <div>
+          <div class="bal">
             <p>Current Balance</p>
-            <p id="current-bal">$13.23</p>
+            <p id="current-bal"></p>
           </div>
-          <div>
+          <div class="bal">
             <p>Available Balance</p>
-            <p id="available-bal">$13.23</p>
+            <p id="available-bal"></p>
           </div>
         </div>
-      </div>
+      </section>
     </main>
   </body>
 </html>

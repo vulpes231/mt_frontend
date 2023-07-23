@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0669e2;
+}
+
+body {
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  width: 100vw;
+  background-color: #fff;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 1px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 60px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+nav ul {
+  display: none;
+  gap: 10px;
+  list-style-type: none;
+}
+
+nav ul li a {
+  color: var(--bg);
+  text-decoration: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.logo h1 {
+  text-transform: uppercase;
+  color: var(--bg);
+}
+.logo span {
+  color: #333;
+}
+.logout {
+  display: none;
+  text-decoration: none;
+  align-items: center;
+  gap: 5px;
+  color: var(--bg);
+}
+.menu-btn {
+  color: var(--bg);
+  font-weight: 500;
+}
+
+main {
+  /* background-color: blue; */
+  width: 100%;
+  height: calc(100vh - 60px);
+  padding: 15px;
+}
+
+.dash-head {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: #333;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accounts {
+  background-color: var(--bg);
+  border-radius: 10px;
+  padding: 15px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.accounts div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #fff;
+  padding: 5px 0;
+}
+
+.bal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#user {
+  font-weight: 600;
+  color: var(--bg);
+}
+
+.account-type {
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .menu-btn {
+    display: none;
+  }
+  .logout {
+    display: flex;
+  }
+  nav ul {
+    display: flex;
+  }
+  .dash-head {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  nav {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+}
