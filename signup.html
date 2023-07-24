@@ -4,55 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="assets/js/signup.js" type="module"></script>
+    <link rel="stylesheet" href="assets/css/signup.css" />
     <title>MetaBank | Enroll</title>
   </head>
   <body>
     <header>
-      <a href="#" class="logo">
-        <img src="assets/img/logo.png" alt="logo-image" width="50" />
-        <h1>meta <span>bank</span></h1>
-      </a>
+      <nav>
+        <a href="#" class="logo">
+          <img src="assets/img/logo.png" alt="logo-image" width="50" />
+          <h1>meta <span>bank</span></h1>
+        </a>
+      </nav>
     </header>
     <main>
       <form id="signup-form" action="">
-        <h3>Welcome back!</h3>
-        <input
-          type="text"
-          id="firstname"
-          placeholder="Firstname"
-          autocomplete="off"
-        />
-        <input
-          type="text"
-          id="lastname"
-          placeholder="Lastname"
-          autocomplete="off"
-        />
-        <input
-          type="text"
-          id="username"
-          placeholder="Username"
-          autocomplete="off"
-        />
-        <input
-          type="password"
-          id="password"
-          placeholder="Password"
-          autocomplete="off"
-        />
-        <input type="email" id="email" placeholder="Email" autocomplete="off" />
-        <input
-          type="number"
-          id="phone"
-          placeholder="Phone"
-          autocomplete="off"
-        />
-        <input
-          type="text"
-          id="address"
-          placeholder="Address"
-          autocomplete="off"
-        />
+        <h3>Your first step to a new account</h3>
+        <div>
+          <input
+            type="text"
+            id="firstname"
+            placeholder="Firstname"
+            autocomplete="off"
+          />
+          <input
+            type="text"
+            id="lastname"
+            placeholder="Lastname"
+            autocomplete="off"
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            id="username"
+            placeholder="Username"
+            autocomplete="off"
+          />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            autocomplete="off"
+          />
+        </div>
+        <div>
+          <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            autocomplete="off"
+          />
+          <input
+            type="number"
+            id="phone"
+            placeholder="Phone"
+            autocomplete="off"
+          />
+          <input
+            type="text"
+            id="address"
+            placeholder="Address"
+            autocomplete="off"
+          />
+        </div>
         <select id="account_type">
           <option value="Account-type">Account-type</option>
           <option value="Basic Checking">Basic Checking</option>

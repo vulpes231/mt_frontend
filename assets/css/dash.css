@@ -98,23 +98,29 @@ main {
 }
 
 .accounts {
-  background-color: var(--bg);
-  border-radius: 10px;
+  /* background-color: var(--bg); */
+  border-radius: 0 0 10px 10px;
   padding: 15px;
-  color: #fff;
+  color: var(--bg);
   font-family: "Roboto", sans-serif;
   letter-spacing: 1px;
   display: flex;
   flex-direction: column;
   gap: 15px;
+  /* box-shadow: 2px 2px 4px rgb(0, 0, 0, 0.1); */
+  border: 1px solid var(--bg);
 }
 
 .accounts div:nth-child(1) {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #fff;
-  padding: 5px 0;
+  border-bottom: 1px solid var(--bg);
+  padding: 10px;
+  color: #fff;
+  background-color: var(--bg);
+  font-weight: 600;
+  border-radius: 10px 0 10px 0;
 }
 
 .bal {
@@ -133,6 +139,7 @@ main {
   cursor: pointer;
   color: #fff;
 }
+
 @media screen and (min-width: 768px) {
   .menu-btn {
     display: none;
@@ -140,9 +147,7 @@ main {
   .logout {
     display: flex;
   }
-  nav ul {
-    display: flex;
-  }
+
   .dash-head {
     font-size: 20px;
   }
@@ -152,6 +157,9 @@ main {
   nav {
     max-width: 1100px;
     margin: 0 auto;
+  }
+  nav ul {
+    display: flex;
   }
   main {
     max-width: 1100px;
