@@ -8,7 +8,7 @@ export async function registerUser(reqBody) {
   };
 
   try {
-    const url = "http://localhost:3500/register";
+    const url = "http://localhost:3500/enroll";
     const res = await fetch(url, reqOptions);
     const message = await res.json();
     const status = res.status;

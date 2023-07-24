@@ -77,61 +77,86 @@ nav ul li a {
 }
 
 main {
-  /* background-color: blue; */
+  background-color: rgba(166, 189, 218, 0.063);
   width: 100%;
   height: calc(100vh - 60px);
   padding: 15px;
-}
-
-.dash-head {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  border-radius: 5px;
   color: #333;
 }
 
-.title {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.accounts {
-  background-color: var(--bg);
-  border-radius: 10px;
-  padding: 15px;
-  color: #fff;
-  font-family: "Roboto", sans-serif;
-  letter-spacing: 1px;
+.head {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.accounts div:nth-child(1) {
+.head-bal {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #fff;
-  padding: 5px 0;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+  font-size: 20px;
 }
-
-.bal {
+.head-bal span {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
 }
 
-#user {
-  font-weight: 600;
-  color: var(--bg);
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
-
-.account-type {
+.body h3 {
+  border-bottom: 1px solid var(--bg);
   text-transform: uppercase;
-  cursor: pointer;
-  color: #fff;
+  letter-spacing: 1px;
+}
+.trans {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  font-size: 20px;
+  /* border: 1px solid var(--bg); */
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+}
+.trans:nth-of-type(even) {
+  background-color: hsla(213, 56%, 77%, 0.121);
+}
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.balance {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.balance span:nth-child(1) {
+  color: green;
+}
+.balance span:nth-child(2) {
+  /* margin-left: 5px; */
+  color: darkgray;
+}
+.date {
+  border-bottom: 1px solid var(--bg);
+  width: 15%;
+}
+.title {
+  font-size: 18px;
+}
+.debit {
+  color: red;
+}
+.credit {
+  color: green;
 }
 @media screen and (min-width: 768px) {
   .menu-btn {
@@ -143,9 +168,6 @@ main {
   nav ul {
     display: flex;
   }
-  .dash-head {
-    font-size: 20px;
-  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -156,5 +178,6 @@ main {
   main {
     max-width: 1100px;
     margin: 0 auto;
+    background-color: transparent;
   }
 }

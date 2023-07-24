@@ -1,6 +1,10 @@
 // import { getUser } from "./utils/post.js";
+import { homeButton } from "./utils/home.js";
 
 document.addEventListener("DOMContentLoaded", async function () {
+  const logoEL = document.querySelector(".logo");
+
+  logoEL.addEventListener("click", homeButton);
   const accessToken = sessionStorage.getItem("accessToken");
 
   if (!accessToken) {
@@ -14,6 +18,14 @@ document.addEventListener("DOMContentLoaded", async function () {
     sessionStorage.clear();
     window.location.href = "/login.html";
   });
+
+  const clickedAcct = document.querySelector(".account-type");
+  clickedAcct.addEventListener("click", function () {
+    const acctName = clickedAcct.textContent;
+    sessionStorage.setItem("acct", acctName);
+    window.location.href = "/transactions.html";
+  });
+  // console.log(clickedAcct);
 
   const user = sessionStorage.getItem("username");
 
@@ -38,39 +50,49 @@ document.addEventListener("DOMContentLoaded", async function () {
       const res = await fetch(url, reqOptions);
       const data = await res.json();
 
-      if (Array.isArray(data)) {
-        const arrayLength = data.length;
-        // console.log(arrayLength);
-      } else {
-        // If data is not an array, set arrayLength to 1 (single object)
-        const arrayLength = 1;
-        // console.log(arrayLength);
-      }
+      console.log(data); // Check the received data in the console
 
-      if (res.status === 401 || res.status === 403) {
-        sessionStorage.clear();
-        window.location.href = "/login.html";
-      } else if (res.status === 200) {
+      // Check if the response is an array (multiple objects) or a single object
+      const arrayLength = Array.isArray(data) ? data.length : 1;
+
+      // Update the count element based on the number of items received
+      const countEl = document.getElementById("counter");
+      countEl.textContent = `(${arrayLength})`;
+
+      // Check if the data received is not empty
+      if (res.status === 200 && arrayLength > 0) {
+        // Access the first object from the array (if it's an array)
+        const accountData = Array.isArray(data) ? data[0] : data;
+
+        // Access and display the properties from the object
         const account_typeEl = document.getElementById("account-type");
         const account_noEl = document.getElementById("account-no");
         const availableEl = document.getElementById("available-bal");
         const currentEl = document.getElementById("current-bal");
-        const totalEl = document.getElementById("total-account");
-        const countEl = document.getElementById("counter");
 
-        account_typeEl.textContent = data.account_type;
-        account_noEl.textContent = data.account_num;
-        availableEl.textContent = `$ ${parseFloat(data.available_bal).toFixed(
-          2
-        )}`;
-        currentEl.textContent = `$ ${parseFloat(data.current_bal).toFixed(2)}`;
+        account_typeEl.textContent = accountData.account_type;
+        account_noEl.textContent = accountData.account_num;
 
-        countEl.textContent = `(${1})`;
+        // Convert available_bal and current_bal to numbers and display with fixed decimals
+        availableEl.textContent = `$ ${parseFloat(
+          accountData.available_bal
+        ).toFixed(2)}`;
+        currentEl.textContent = `$ ${parseFloat(
+          accountData.current_bal
+        ).toFixed(2)}`;
+      } else {
+        // Handle the case when the data is empty or response status is not 200
+        console.log("Data not available or response status is not 200.");
       }
 
-      //   console.log(data);
+      // Handle authentication errors
+      if (res.status === 401 || res.status === 403) {
+        sessionStorage.clear();
+        window.location.href = "/login.html";
+      }
     } catch (err) {
-      console.log(err);
+      // Log any errors that occur during the fetch or data processing
+      console.log("Error fetching data:", err);
     }
   }
 

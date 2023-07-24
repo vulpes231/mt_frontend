@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/transactions.css" />
+    <script src="assets/js/transactions.js" type="module"></script>
+    <title>MetaBank | Transactions</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#" class="logo">
+          <img src="assets/img/logo.png" alt="logo-image" width="50" />
+          <h1>meta<span>bank</span></h1>
+        </a>
+        <i class="bx bx-menu menu-btn"></i>
+        <ul>
+          <li>
+            <a href="dashboard.html">Accounts</a>
+          </li>
+          <li>
+            <a href="">Transfer</a>
+          </li>
+          <li>
+            <a href="">Payments</a>
+          </li>
+          <li>
+            <a href="">Service center</a>
+          </li>
+        </ul>
+        <a class="logout" id="logout" href="">
+          <i class="bx bx-log-in"></i>
+          <p>Logout</p>
+        </a>
+      </nav>
+    </header>
+    <main>
+      <section class="head">
+        <div class="title">
+          <h3 id="acct-name">FD Premium Checking</h3>
+          <p>Last Updated July 13, 2023 2:58AM</p>
+        </div>
+        <div class="head-bal">
+          <span>
+            <h3 id="curr">$2300</h3>
+            <p>Current Balance</p>
+          </span>
+          |
+          <span>
+            <h3 id="av">$2300</h3>
+            <p>Available Balance</p>
+          </span>
+        </div>
+      </section>
+      <section class="body">
+        <h3>Transactions</h3>
+        <div id="trans-body">
+          <div class="trans">
+            <span class="date" id="date">JUL 13 2023</span>
+            <div class="details">
+              <span id="description">ATM texas Withdrawal NFT#BXX2023</span>
+              <div class="balance">
+                <span id="amount">+ $1000</span>
+                <span id="bal">$3200</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

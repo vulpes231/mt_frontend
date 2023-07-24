@@ -1,6 +1,10 @@
 import { registerUser } from "./utils/post.js";
+import { homeButton } from "./utils/home.js";
 
 document.addEventListener("DOMContentLoaded", function () {
+  const logoEL = document.querySelector(".logo");
+
+  logoEL.addEventListener("click", homeButton);
   const signUpForm = document.getElementById("signup-form");
 
   signUpForm.addEventListener("submit", async function (e) {
