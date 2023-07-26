@@ -130,4 +130,73 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(err);
     }
   });
+
+  const changePassForm = document.getElementById("change-pass");
+
+  changePassForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const passEl = document.getElementById("password");
+    const newPass = document.getElementById("new_pass");
+    const confirmEl = document.getElementById("confirm");
+    const errorEl = document.getElementById("error1");
+    const successEl = document.getElementById("success1");
+
+    const password = passEl.value;
+    const new_pass = newPass.value;
+    const confirm = confirmEl.value;
+    const username = sessionStorage.getItem("username");
+
+    const reqBody = {
+      username: username,
+      password: password,
+      new_pass: new_pass,
+      confirm: confirm,
+    };
+
+    const reqOptions = {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: "Bearer " + accessToken,
+      },
+      credentials: "include",
+      body: JSON.stringify(reqBody),
+    };
+
+    const url = `http://localhost:3500/change-password`;
+    try {
+      const res = await fetch(url, reqOptions);
+      const data = await res.json();
+
+      let statusCode = res.status;
+
+      if (statusCode === 200) {
+        successEl.textContent = data.message;
+        successEl.style.display = "block";
+        console.log(data);
+        changePassForm.reset();
+        setTimeout(() => {
+          successEl.style.display = "none";
+        }, 2000);
+      } else if (statusCode === 400) {
+        errorEl.textContent = data.message;
+        errorEl.style.display = "block";
+        changePassForm.reset();
+        setTimeout(() => {
+          errorEl.style.display = "none";
+        }, 3000);
+      }
+
+      // Handle authentication errors
+      if (statusCode === 401 || statusCode === 403) {
+        sessionStorage.clear();
+        window.location.href = "/login.html";
+      }
+    } catch (err) {
+      console.log(err);
+    }
+
+    console.log(password, new_pass, confirm, username);
+  });
 });

@@ -132,7 +132,15 @@ form button {
   color: red;
   display: none;
 }
+#error1 {
+  color: red;
+  display: none;
+}
 #success {
+  color: green;
+  display: none;
+}
+#success1 {
   color: green;
   display: none;
 }
