@@ -73,13 +73,27 @@ document.addEventListener("DOMContentLoaded", async function () {
         account_typeEl.textContent = accountData.account_type;
         account_noEl.textContent = accountData.account_num;
 
-        // Convert available_bal and current_bal to numbers and display with fixed decimals
-        availableEl.textContent = `$ ${parseFloat(
+        const formattedCr = parseFloat(accountData.current_bal).toLocaleString(
+          "en-US",
+          {
+            style: "currency",
+            currency: "USD",
+          }
+        );
+
+        const formattedAv = parseFloat(
           accountData.available_bal
-        ).toFixed(2)}`;
-        currentEl.textContent = `$ ${parseFloat(
-          accountData.current_bal
-        ).toFixed(2)}`;
+        ).toLocaleString("en-US", {
+          style: "currency",
+          currency: "USD",
+        });
+
+        console.log(formattedAv);
+        console.log(formattedCr);
+
+        // Convert available_bal and current_bal to numbers and display with fixed decimals
+        availableEl.textContent = formattedAv;
+        currentEl.textContent = formattedCr;
       } else {
         // Handle the case when the data is empty or response status is not 200
         console.log("Data not available or response status is not 200.");

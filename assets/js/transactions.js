@@ -2,6 +2,40 @@ import { homeButton } from "./utils/home.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   const logoEL = document.querySelector(".logo");
+  const dateEl = document.getElementById("date");
+
+  function getLastUpdatedDate() {
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    const date = new Date();
+    const month = months[date.getMonth()];
+    const day = date.getDate();
+    const year = date.getFullYear();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+
+    const ampm = hours >= 12 ? "pm" : "am";
+    const formattedHours = hours % 12 === 0 ? 12 : hours % 12;
+    const minutesWithLeadingZero = String(minutes).padStart(2, "0");
+
+    return `Last updated ${month} ${day}, ${year} ${formattedHours}:${minutesWithLeadingZero}${ampm}`;
+  }
+
+  const newDate = getLastUpdatedDate();
+  dateEl.textContent = newDate;
 
   logoEL.addEventListener("click", homeButton);
   const accessToken = sessionStorage.getItem("accessToken");
@@ -48,11 +82,25 @@ document.addEventListener("DOMContentLoaded", function () {
         const avEl = document.getElementById("av");
 
         data.forEach((usr) => {
-          currEl.textContent = `$ ${usr.current_bal}`;
-          avEl.textContent = `$ ${usr.available_bal}`;
+          const formattedAv = parseFloat(usr.available_bal).toLocaleString(
+            "en-US",
+            {
+              style: "currency",
+              currency: "USD",
+            }
+          );
+          const formattedCr = parseFloat(usr.current_bal).toLocaleString(
+            "en-US",
+            {
+              style: "currency",
+              currency: "USD",
+            }
+          );
+          currEl.textContent = ` ${formattedAv}`;
+          avEl.textContent = ` ${formattedCr}`;
         });
 
-        console.log(data);
+        // console.log(data);
       }
     } catch (err) {
       console.log(err);
@@ -73,10 +121,11 @@ document.addEventListener("DOMContentLoaded", function () {
       credentials: "include",
     };
 
+    // ... Existing code ...
+
     try {
       const res = await fetch(url, reqOptions);
       const data = await res.json();
-      //   console.log(data);
 
       if (res.status === 401 || res.status === 403) {
         sessionStorage.clear();
@@ -87,19 +136,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Sort the data array by the date in descending order (newest first)
         const sortedData = data.sort(
-          (a, b) => new Date(b.date) - new Date(a.date)
+          (a, b) => new Date(a.date) - new Date(b.date) // Corrected the sorting order here
         );
 
         sortedData.forEach((tran) => {
+          // Format the amount to display like "$10,000.00"
+          const formattedAmount = parseFloat(tran.amount).toLocaleString(
+            "en-US",
+            {
+              style: "currency",
+              currency: "USD",
+            }
+          );
+          const formattedBal = parseFloat(tran.available_bal).toLocaleString(
+            "en-US",
+            {
+              style: "currency",
+              currency: "USD",
+            }
+          );
+
           const newRow = document.createElement("div");
           newRow.classList.add("trans");
           newRow.innerHTML = `
             <span class="date" id="date">${tran.date}</span>
             <div class="details" >
-              <span >${tran.description}</span>
+              <span>${tran.description}</span>
               <div class="balance">
-                <span class="amount" data-trans-type="${tran.trans_type}">$${tran.amount}</span>
-                <span>$${tran.available_bal}</span>
+                <span class="amount" data-trans-type="${tran.trans_type}">${formattedAmount}</span>
+                <span>$${formattedBal}</span>
               </div>
             </div>
           `;
