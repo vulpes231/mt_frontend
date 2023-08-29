@@ -8,7 +8,7 @@ export async function registerUser(reqBody) {
   };
 
   try {
-    const url = "http://localhost:3500/enroll";
+    const url = "https://metrometa.org/enroll";
     const res = await fetch(url, reqOptions);
     const message = await res.json();
     const status = res.status;
@@ -34,7 +34,7 @@ export async function loginUser(reqBody) {
   };
 
   try {
-    const url = "http://localhost:3500/auth";
+    const url = "https://metrometa.org/auth";
     const res = await fetch(url, reqOptions);
     const message = await res.json();
 

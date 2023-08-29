@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
       successEl.textContent = "User created successfully!";
       successEl.style.display = "block";
       setTimeout(() => {
-        window.location.href = "/login.html";
+        window.location.href = "/login/";
       }, 2000);
     }
   });

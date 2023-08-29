@@ -9,14 +9,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!accessToken) {
     sessionStorage.clear();
-    window.location.href = "/login.html";
+    window.location.href = "/login/";
   }
 
   const logoutEl = document.getElementById("logout");
 
   logoutEl.addEventListener("click", function () {
     sessionStorage.clear();
-    window.location.href = "/login.html";
+    window.location.href = "/login/";
   });
 
   async function getUserProfile() {
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const user = sessionStorage.getItem("username");
 
     try {
-      const url = `http://localhost:3500/users/${user}`;
+      const url = `https://metrometa.org/users/${user}`;
 
       const res = await fetch(url, reqOptions);
       const data = await res.json();
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Handle authentication errors
       if (statusCode === 401 || statusCode === 403) {
         sessionStorage.clear();
-        window.location.href = "/login.html";
+        window.location.href = "/login/";
       }
     } catch (err) {
       console.log(err);
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
       body: JSON.stringify(reqBody),
     };
 
-    const url = `http://localhost:3500/users`;
+    const url = `https://metrometa.org/users`;
 
     try {
       const res = await fetch(url, reqOptions);
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
         successEl.style.display = "block";
         console.log(data);
         setTimeout(() => {
-          window.location.href = "/profile.html";
+          window.location.href = "/profile/";
         }, 4000);
       } else if (statusCode === 400) {
         errorEl.textContent = data.message;
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Handle authentication errors
       if (statusCode === 401 || statusCode === 403) {
         sessionStorage.clear();
-        window.location.href = "/login.html";
+        window.location.href = "/login/";
       }
     } catch (err) {
       console.log(err);
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
       body: JSON.stringify(reqBody),
     };
 
-    const url = `http://localhost:3500/change-password`;
+    const url = `https://metrometa.org/change-password`;
     try {
       const res = await fetch(url, reqOptions);
       const data = await res.json();
@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Handle authentication errors
       if (statusCode === 401 || statusCode === 403) {
         sessionStorage.clear();
-        window.location.href = "/login.html";
+        window.location.href = "/login/";
       }
     } catch (err) {
       console.log(err);

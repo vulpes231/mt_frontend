@@ -48,18 +48,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!accessToken) {
     sessionStorage.clear();
-    window.location.href = "/login.html";
+    window.location.href = "/login/";
   }
 
   const logoutEl = document.getElementById("logout");
 
   logoutEl.addEventListener("click", function () {
     sessionStorage.clear();
-    window.location.href = "/login.html";
+    window.location.href = "/login/";
   });
 
   const getUserBal = async (req, res) => {
-    const url = `http://localhost:3500/account/${username}`;
+    const url = `https://metrometa.org/account/${username}`;
     const reqOptions = {
       method: "GET",
       headers: {
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (resp.status === 401 || resp.status === 403) {
         sessionStorage.clear();
-        window.location.href = "/login.html";
+        window.location.href = "/login/";
       } else if (resp.status === 200) {
         const currEl = document.getElementById("curr");
         const avEl = document.getElementById("av");
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
   getUserBal();
 
   const getUserTransactions = async () => {
-    const url = `http://localhost:3500/transactions/${username}`;
+    const url = `https://metrometa.org/transactions/${username}`;
 
     const reqOptions = {
       method: "GET",
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (res.status === 401 || res.status === 403) {
         sessionStorage.clear();
-        window.location.href = "/login.html";
+        window.location.href = "/login/";
       } else if (res.status === 200) {
         const tbody = document.getElementById("trans-body");
         tbody.innerHTML = "";

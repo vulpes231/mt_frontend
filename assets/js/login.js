@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
       displaySuccess();
       loginForm.reset();
       setTimeout(() => {
-        window.location.href = "/dashboard.html";
+        window.location.href = "/dashboard/";
       }, 2000);
     }
   });
