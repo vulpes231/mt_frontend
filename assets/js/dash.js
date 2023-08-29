@@ -9,14 +9,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   if (!accessToken) {
     sessionStorage.clear();
-    window.location.href = "/login.html";
+    window.location.href = "/login/";
   }
 
   const logoutEl = document.getElementById("logout");
 
   logoutEl.addEventListener("click", function () {
     sessionStorage.clear();
-    window.location.href = "/login.html";
+    window.location.href = "/login/";
   });
 
   const clickedAcct = document.querySelector(".account-type");
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       // Handle authentication errors
       if (res.status === 401 || res.status === 403) {
         sessionStorage.clear();
-        window.location.href = "/login.html";
+        window.location.href = "/login/";
       }
     } catch (err) {
       // Log any errors that occur during the fetch or data processing
