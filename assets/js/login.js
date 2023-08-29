@@ -23,14 +23,17 @@ document.addEventListener("DOMContentLoaded", function () {
     if (data.status === 400) {
       let msg = data.message;
       displayError(msg);
+      loginForm.reset();
     } else if (data.status === 401) {
       console.log(data);
       displayError(data.message);
+      loginForm.reset();
     } else if (data.status === 200) {
       const accessToken = data.accessToken;
       sessionStorage.setItem("username", username);
       sessionStorage.setItem("accessToken", accessToken);
       displaySuccess();
+      loginForm.reset();
       setTimeout(() => {
         window.location.href = "/dashboard.html";
       }, 2000);

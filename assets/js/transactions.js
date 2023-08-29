@@ -96,8 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
               currency: "USD",
             }
           );
-          currEl.textContent = ` ${formattedAv}`;
-          avEl.textContent = ` ${formattedCr}`;
+          currEl.textContent = ` ${formattedCr}`;
+          avEl.textContent = ` ${formattedAv}`;
         });
 
         // console.log(data);

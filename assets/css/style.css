@@ -49,6 +49,17 @@ nav ul li a {
   text-transform: capitalize;
 }
 
+.mobile-menu.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  background-color: #fff;
+  width: 100%;
+  padding: 1rem;
+  padding-bottom: 30px;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -96,9 +107,7 @@ nav ul li a {
 }
 
 .action-btns {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+  display: none;
 }
 
 .action-btns a {
@@ -149,7 +158,7 @@ nav ul li a {
   font-family: "Roboto", sans-serif;
   border: 1px solid var(--bg);
   padding: 10px;
-  width: 400px;
+
   text-align: center;
   margin-top: 20px;
   border-radius: 10px 0 10px 0;
@@ -161,7 +170,7 @@ nav ul li a {
   margin-top: 40px;
   padding: 15px;
   gap: 15px;
-  margin-top: 40px;
+  margin-top: 80px;
 }
 .start h3 {
   text-transform: uppercase;
@@ -197,7 +206,7 @@ nav ul li a {
 .budget {
   display: flex;
   flex-direction: column-reverse;
-  margin-top: 40px;
+  margin-top: 80px;
   padding: 15px;
   gap: 15px;
   margin-top: 70px;
@@ -232,11 +241,14 @@ nav ul li a {
   margin-top: 40px;
   padding: 15px;
   gap: 15px;
-  margin-top: 40px;
+  margin-top: 80px;
   color: darkgray;
   font-family: "Oswald", sans-serif;
 }
 
+footer p {
+  font-size: 0.5rem;
+}
 .phone {
   display: flex;
   align-items: center;
@@ -270,6 +282,13 @@ nav ul li a {
 .icons i {
   font-size: 25px;
 }
+
+.mail {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 @media screen and (min-width: 768px) {
   .card-btns {
     display: flex;
@@ -290,6 +309,16 @@ nav ul li a {
   }
   .budget-text {
     margin-left: 50px;
+  }
+
+  .action-btns {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .hero-text a {
+    width: 400px;
   }
 }
 
