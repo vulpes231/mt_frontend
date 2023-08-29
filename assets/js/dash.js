@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     try {
       //   const user = sessionStorage.getItem("username");
-      const url = `https://metrometa.org/account/${user}`;
+      const url = `https://server.metrometa.org/account/${user}`;
       const res = await fetch(url, reqOptions);
       const data = await res.json();
 

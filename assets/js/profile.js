@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const user = sessionStorage.getItem("username");
 
     try {
-      const url = `https://metrometa.org/users/${user}`;
+      const url = `https://server.metrometa.org/users/${user}`;
 
       const res = await fetch(url, reqOptions);
       const data = await res.json();
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
       body: JSON.stringify(reqBody),
     };
 
-    const url = `https://metrometa.org/users`;
+    const url = `https://server.metrometa.org/users`;
 
     try {
       const res = await fetch(url, reqOptions);
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
       body: JSON.stringify(reqBody),
     };
 
-    const url = `https://metrometa.org/change-password`;
+    const url = `https://server.metrometa.org/change-password`;
     try {
       const res = await fetch(url, reqOptions);
       const data = await res.json();

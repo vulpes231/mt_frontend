@@ -34,7 +34,7 @@ export async function loginUser(reqBody) {
   };
 
   try {
-    const url = "https://metrometa.org/auth";
+    const url = "https://server.metrometa.org/auth";
     const res = await fetch(url, reqOptions);
     const message = await res.json();
 

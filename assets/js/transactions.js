@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const getUserBal = async (req, res) => {
-    const url = `https://metrometa.org/account/${username}`;
+    const url = `https://server.metrometa.org/account/${username}`;
     const reqOptions = {
       method: "GET",
       headers: {
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
   getUserBal();
 
   const getUserTransactions = async () => {
-    const url = `https://metrometa.org/transactions/${username}`;
+    const url = `https://server.metrometa.org/transactions/${username}`;
 
     const reqOptions = {
       method: "GET",
