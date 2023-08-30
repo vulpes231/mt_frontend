@@ -4,6 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const profileEl = document.getElementById("profile");
   const logoEL = document.querySelector(".logo");
 
+  const menuBtn = document.querySelector(".menu-btn");
+  const mobileMenu = document.querySelector(".mobile-menu");
+
+  menuBtn.addEventListener("click", function () {
+    mobileMenu.classList.toggle("active");
+  });
+
   logoEL.addEventListener("click", homeButton);
   const accessToken = sessionStorage.getItem("accessToken");
 
@@ -41,11 +48,12 @@ document.addEventListener("DOMContentLoaded", function () {
       if (statusCode === 200) {
         // console.log(data);
         profileEl.innerHTML = "";
+        profileEl.classList.add("profile-el");
         profileEl.innerHTML = `
             <h3>${data.firstname} ${data.lastname}</h3>
-            <p>${data.address}</p>
-            <p>${data.email}</p>
-            <p>${data.phone}</p>
+            <p> <i class='bx bx-current-location'> </i> ${data.address}</p>
+            <p><i class='bx bxs-envelope' ></i> ${data.email}</p>
+            <p><i class='bx bxs-phone'></i> ${data.phone}</p>
         `;
       }
 

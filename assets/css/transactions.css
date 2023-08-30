@@ -65,7 +65,7 @@ nav ul li a {
   color: #333;
 }
 .logout {
-  display: none;
+  display: flex;
   text-decoration: none;
   align-items: center;
   gap: 5px;
@@ -74,6 +74,23 @@ nav ul li a {
 .menu-btn {
   color: var(--bg);
   font-weight: 500;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  width: 180px;
+  gap: 1rem;
 }
 
 main {
@@ -165,8 +182,11 @@ main {
   .logout {
     display: flex;
   }
-  nav ul {
+  .mobile-menu {
     display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
   }
 }
 

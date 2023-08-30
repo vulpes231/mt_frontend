@@ -4,6 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const logoEL = document.querySelector(".logo");
   const dateEl = document.getElementById("date");
 
+  const menuBtn = document.querySelector(".menu-btn");
+  const mobileMenu = document.querySelector(".mobile-menu");
+
+  menuBtn.addEventListener("click", function () {
+    mobileMenu.classList.toggle("active");
+  });
+
   function getLastUpdatedDate() {
     const months = [
       "January",

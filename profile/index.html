@@ -8,42 +8,48 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/profile.css" />
-    <script src="assets/js/profile.js" type="module"></script>
+    <link rel="stylesheet" href="../assets/css/profile.css" />
+    <script src="../assets/js/profile.js" type="module"></script>
     <title>MetaBank | Dashboard</title>
   </head>
   <body>
     <header>
       <nav>
         <a href="/" class="logo">
-          <img src="assets/img/logo.png" alt="logo-image" width="50" />
+          <img src="../assets/img/logo.png" alt="logo-image" width="50" />
           <h1>meta<span>bank</span></h1>
         </a>
-        <i class="bx bx-menu menu-btn"></i>
-        <ul>
+        <ul class="mobile-menu">
           <li>
             <a href="/dashboard/">Accounts</a>
           </li>
           <li>
-            <a href="#">Transfer</a>
+            <a href="">Transfer</a>
           </li>
           <li>
-            <a href="#">Payments</a>
+            <a href="">Payments</a>
           </li>
           <li>
             <a href="/profile/">Profile</a>
           </li>
+          <li>
+            <a class="logout" id="logout" href="">
+              <i class="bx bx-log-in"></i>
+              <p>Logout</p>
+            </a>
+          </li>
         </ul>
-        <a class="logout" id="logout" href="">
-          <i class="bx bx-log-in"></i>
-          <p>Logout</p>
-        </a>
+        <i class="bx bx-menu menu-btn"></i>
       </nav>
     </header>
     <main>
       <div class="user-details">
         <span>
-          <img src="assets/img/user.png" alt="user-profile-image" width="60" />
+          <img
+            src="../assets/img/user.png"
+            alt="user-profile-image"
+            width="60"
+          />
         </span>
         <span id="profile"></span>
       </div>

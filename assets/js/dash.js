@@ -4,6 +4,12 @@ import { homeButton } from "./utils/home.js";
 document.addEventListener("DOMContentLoaded", async function () {
   const logoEL = document.querySelector(".logo");
   const lastLogin = document.getElementById("last-login");
+  const menuBtn = document.querySelector(".menu-btn");
+  const mobileMenu = document.querySelector(".mobile-menu");
+
+  menuBtn.addEventListener("click", function () {
+    mobileMenu.classList.toggle("active");
+  });
 
   const currentDateTime = new Date();
 
