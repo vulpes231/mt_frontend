@@ -17,6 +17,7 @@
       </nav>
     </header>
     <main>
+      <div id="loader" class="loader"></div>
       <form id="signup-form" action="">
         <h3>Your first step to a new account</h3>
         <div>
@@ -76,15 +77,15 @@
           </option>
           <option value="IRA Rollover">IRA Rollover</option>
         </select>
+        <div id="error"></div>
+        <div id="success"></div>
 
         <button>Enroll</button>
         <a href="#">forgot email or password</a>
         <p>
           already have an account?
-          <span><a href="login.html">Login Now</a></span>
+          <span><a href="/login/">Login Now</a></span>
         </p>
-        <div id="error"></div>
-        <div id="success"></div>
       </form>
     </main>
   </body>

@@ -3,6 +3,22 @@ import { homeButton } from "./utils/home.js";
 
 document.addEventListener("DOMContentLoaded", async function () {
   const logoEL = document.querySelector(".logo");
+  const lastLogin = document.getElementById("last-login");
+
+  const currentDateTime = new Date();
+
+  const options = {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+  };
+
+  const formattedDateTime = currentDateTime.toLocaleString("en-US", options);
+
+  lastLogin.textContent = formattedDateTime;
 
   logoEL.addEventListener("click", homeButton);
   const accessToken = sessionStorage.getItem("accessToken");

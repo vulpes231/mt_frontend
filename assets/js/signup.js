@@ -6,9 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   logoEL.addEventListener("click", homeButton);
   const signUpForm = document.getElementById("signup-form");
+  const loader = document.getElementById("loader");
 
   signUpForm.addEventListener("submit", async function (e) {
     e.preventDefault();
+    // Show the loader
+    loader.style.display = "inline-block";
 
     const usernameEl = document.getElementById("username");
     const errorEl = document.getElementById("error");
@@ -51,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
       errorEl.style.color = "red";
       errorEl.textContent = "Fill in all the required fields!";
       errorEl.style.display = "block";
+      loader.style.display = "none";
       setTimeout(() => {
         errorEl.style.display = "none";
       }, 2000);
@@ -59,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
       successEl.style.color = "green";
       successEl.textContent = "User created successfully!";
       successEl.style.display = "block";
+      // loader.style.display = "none";
       setTimeout(() => {
         window.location.href = "/login/";
       }, 2000);

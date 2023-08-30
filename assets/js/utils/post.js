@@ -8,7 +8,7 @@ export async function registerUser(reqBody) {
   };
 
   try {
-    const url = "https://metrometa.org/enroll";
+    const url = "https://server.metrometa.org/enroll";
     const res = await fetch(url, reqOptions);
     const message = await res.json();
     const status = res.status;

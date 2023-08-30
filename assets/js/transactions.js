@@ -160,13 +160,12 @@ document.addEventListener("DOMContentLoaded", function () {
           newRow.classList.add("trans");
           newRow.innerHTML = `
             <span class="date" id="date">${tran.date}</span>
-            <div class="details" >
-              <span>${tran.description}</span>
-              <div class="balance">
-                <span class="amount" data-trans-type="${tran.trans_type}">${formattedAmount}</span>
-                <span>$${formattedBal}</span>
-              </div>
+            <span>${tran.description}</span>
+            <div class="balance">
+              <span class="amount" data-trans-type="${tran.trans_type}">${formattedAmount}</span>
+              <small>$${formattedBal}</small>
             </div>
+           
           `;
 
           // Prepend the new row to the container (tbody)
