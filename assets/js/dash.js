@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   clickedAcct.addEventListener("click", function () {
     const acctName = clickedAcct.textContent;
     sessionStorage.setItem("acct", acctName);
-    window.location.href = "/transactions.html";
+    window.location.href = "/transactions/";
   });
   // console.log(clickedAcct);
 
