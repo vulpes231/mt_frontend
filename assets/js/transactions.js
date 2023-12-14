@@ -1,5 +1,6 @@
 import { homeButton } from "./utils/home.js";
-const devurl = `http://localhost:3500`;
+// const devurl = `http://localhost:3500`;
+const liveurl = `https://metro-m9ur.onrender.com`;
 
 document.addEventListener("DOMContentLoaded", function () {
   const logoEL = document.querySelector(".logo");
@@ -72,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
     acctType = encodeURIComponent(acctType); // Encode special characters
 
     console.log(acctType);
-    const url = `${devurl}/account/${username}/${acctType}`;
+    const url = `${liveurl}/account/${username}/${acctType}`;
 
     const reqOptions = {
       method: "GET",
@@ -129,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
     acctName = encodeURIComponent(acctName); // Encode special characters
 
     console.log(acctName);
-    const url = `${devurl}/transactions/${username}/${acctName}`;
+    const url = `${liveurl}/transactions/${username}/${acctName}`;
 
     const reqOptions = {
       method: "GET",

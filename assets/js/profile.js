@@ -1,5 +1,6 @@
 import { homeButton } from "./utils/home.js";
-const devurl = `http://localhost:3500`;
+// const devurl = `http://localhost:3500`;
+const liveurl = `https://metro-m9ur.onrender.com`;
 
 document.addEventListener("DOMContentLoaded", function () {
   const profileEl = document.getElementById("profile");
@@ -40,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const user = sessionStorage.getItem("username");
 
     try {
-      const url = `${devurl}/users/${user}`;
+      const url = `${liveurl}/users/${user}`;
 
       const res = await fetch(url, reqOptions);
       const data = await res.json();
@@ -107,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
       body: JSON.stringify(reqBody),
     };
 
-    const url = `${devurl}/users`;
+    const url = `${liveurl}/users`;
 
     try {
       const res = await fetch(url, reqOptions);
@@ -173,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
       body: JSON.stringify(reqBody),
     };
 
-    const url = `${devurl}/change-password`;
+    const url = `${liveurl}/change-password`;
     try {
       const res = await fetch(url, reqOptions);
       const data = await res.json();

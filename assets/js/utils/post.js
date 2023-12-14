@@ -1,5 +1,5 @@
-const devurl = `http://localhost:3500`;
-// const liveurl = `http://localhost:3500`
+// const devurl = `http://localhost:3500`;
+const liveurl = `https://metro-m9ur.onrender.com`;
 
 export async function registerUser(reqBody) {
   const reqOptions = {
@@ -11,7 +11,7 @@ export async function registerUser(reqBody) {
   };
 
   try {
-    const url = `${devurl}/enroll`;
+    const url = `${liveurl}/enroll`;
     const res = await fetch(url, reqOptions);
     const message = await res.json();
     const status = res.status;
@@ -37,7 +37,7 @@ export async function loginUser(reqBody) {
   };
 
   try {
-    const url = `${devurl}/auth`;
+    const url = `${liveurl}/auth`;
     const res = await fetch(url, reqOptions);
     const message = await res.json();
 
