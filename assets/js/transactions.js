@@ -1,4 +1,5 @@
 import { homeButton } from "./utils/home.js";
+const devurl = `http://localhost:3500`;
 
 document.addEventListener("DOMContentLoaded", function () {
   const logoEL = document.querySelector(".logo");
@@ -66,7 +67,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const getUserBal = async (req, res) => {
-    const url = `https://server.metrometa.org/account/${username}`;
+    let acctType = sessionStorage.getItem("acct");
+    acctType.toLowerCase();
+    acctType = encodeURIComponent(acctType); // Encode special characters
+
+    console.log(acctType);
+    const url = `${devurl}/account/${username}/${acctType}`;
+
     const reqOptions = {
       method: "GET",
       headers: {
@@ -79,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       const resp = await fetch(url, reqOptions);
       const data = await resp.json();
-      //   console.log(data);
+      console.log(data);
 
       if (resp.status === 401 || resp.status === 403) {
         sessionStorage.clear();
@@ -117,7 +124,12 @@ document.addEventListener("DOMContentLoaded", function () {
   getUserBal();
 
   const getUserTransactions = async () => {
-    const url = `https://server.metrometa.org/transactions/${username}`;
+    let acctName = sessionStorage.getItem("acct");
+    acctName.toLowerCase();
+    acctName = encodeURIComponent(acctName); // Encode special characters
+
+    console.log(acctName);
+    const url = `${devurl}/transactions/${username}/${acctName}`;
 
     const reqOptions = {
       method: "GET",
@@ -170,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <span>${tran.description}</span>
             <div class="balance">
               <span class="amount" data-trans-type="${tran.trans_type}">${formattedAmount}</span>
-              <small>$${formattedBal}</small>
+              <small>${formattedBal}</small>
             </div>
            
           `;

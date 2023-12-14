@@ -1,4 +1,5 @@
 import { homeButton } from "./utils/home.js";
+const devurl = `http://localhost:3500`;
 
 document.addEventListener("DOMContentLoaded", function () {
   const profileEl = document.getElementById("profile");
@@ -39,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const user = sessionStorage.getItem("username");
 
     try {
-      const url = `https://server.metrometa.org/users/${user}`;
+      const url = `${devurl}/users/${user}`;
 
       const res = await fetch(url, reqOptions);
       const data = await res.json();
@@ -106,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
       body: JSON.stringify(reqBody),
     };
 
-    const url = `https://server.metrometa.org/users`;
+    const url = `${devurl}/users`;
 
     try {
       const res = await fetch(url, reqOptions);
@@ -172,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
       body: JSON.stringify(reqBody),
     };
 
-    const url = `https://server.metrometa.org/change-password`;
+    const url = `${devurl}/change-password`;
     try {
       const res = await fetch(url, reqOptions);
       const data = await res.json();

@@ -124,20 +124,21 @@ main {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  /* box-shadow: 2px 2px 4px rgb(0, 0, 0, 0.1); */
-  border: 1px solid var(--bg);
 }
 
-.accounts div:nth-child(1) {
+.account-entry {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--bg);
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid var(--bg);
+  color: var(--bg);
   padding: 10px;
-  color: #fff;
-  background-color: var(--bg);
   font-weight: 600;
   border-radius: 10px 0 10px 0;
+}
+
+.account-entry p {
+  font-weight: 300;
 }
 
 .bal {
@@ -155,6 +156,14 @@ main {
   text-transform: uppercase;
   cursor: pointer;
   color: #fff;
+  background-color: var(--bg);
+  display: flex;
+  /* background-color: var(--bg); */
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 15px;
+  border-radius: 10px 0 10px 0;
+  border: 1px solid var(--bg);
 }
 
 @media screen and (min-width: 768px) {

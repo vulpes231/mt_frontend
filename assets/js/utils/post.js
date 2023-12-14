@@ -1,3 +1,6 @@
+const devurl = `http://localhost:3500`;
+// const liveurl = `http://localhost:3500`
+
 export async function registerUser(reqBody) {
   const reqOptions = {
     method: "POST",
@@ -8,7 +11,7 @@ export async function registerUser(reqBody) {
   };
 
   try {
-    const url = "https://server.metrometa.org/enroll";
+    const url = `${devurl}/enroll`;
     const res = await fetch(url, reqOptions);
     const message = await res.json();
     const status = res.status;
@@ -34,7 +37,7 @@ export async function loginUser(reqBody) {
   };
 
   try {
-    const url = "https://server.metrometa.org/auth";
+    const url = `${devurl}/auth`;
     const res = await fetch(url, reqOptions);
     const message = await res.json();
 
