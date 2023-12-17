@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/transfer.css" />
+    <script src="../assets/js/transfer.js" defer type="module"></script>
+    <title>MetaBank | Transfer</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/" class="logo">
+          <img src="../assets/img/logo.png" alt="logo-image" width="50" />
+          <h1>meta<span>bank</span></h1>
+        </a>
+        <ul class="mobile-menu">
+          <li>
+            <a href="/dashboard/">Accounts</a>
+          </li>
+          <li>
+            <a href="/transfer/">Transfer</a>
+          </li>
+          <li>
+            <a href="">Payments</a>
+          </li>
+          <li>
+            <a href="/profile/">Profile</a>
+          </li>
+          <li>
+            <a class="logout" id="logout" href="">
+              <i class="bx bx-log-in"></i>
+              <p>Logout</p>
+            </a>
+          </li>
+        </ul>
+        <i class="bx bx-menu menu-btn"></i>
+      </nav>
+    </header>
+    <main>
+      <section class="transfer">
+        <article class="transfer_form">
+          <h3>Transfer Money</h3>
+
+          <form action="">
+            <label for="">
+              From
+              <select name="" id="">
+                <option value="">Please select an account</option>
+              </select>
+            </label>
+            <label for="">
+              To
+              <select name="" id="">
+                <option value="">Please select an account</option>
+              </select>
+            </label>
+            <label for=""
+              >Amount
+              <input type="text" placeholder="$ 0.00" />
+            </label>
+            <label for=""
+              >Date
+              <input type="text" placeholder="Enter date" />
+            </label>
+
+            <button>Send</button>
+          </form>
+        </article>
+        <article class="transfer_form">
+          <h3>Services</h3>
+          <a href="/external/">External Account Transfer</a>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

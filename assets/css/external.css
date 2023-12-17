@@ -46,6 +46,7 @@ nav ul {
 nav ul li a {
   color: var(--bg);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .logo {
@@ -74,6 +75,7 @@ nav ul li a {
 .menu-btn {
   color: var(--bg);
   font-weight: 500;
+  cursor: pointer;
 }
 
 .mobile-menu {
@@ -87,94 +89,49 @@ nav ul li a {
   top: 50px;
   right: 0;
   background-color: #fff;
+  /* border: 1px solid #333; */
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   width: 180px;
   gap: 1rem;
 }
 
-main {
-  /* background-color: blue; */
+.external {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.external form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.external form input,
+select {
   width: 100%;
-  height: calc(100vh - 60px);
-  padding: 10px;
+  padding: 1rem 0.5rem;
+  border: 2px solid var(--bg);
+  font-weight: 100;
 }
 
-.dash-head {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  color: #333;
-}
-
-.title {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.accounts {
-  /* background-color: var(--bg); */
-  border-radius: 0 0 10px 10px;
-  /* padding: 15px; */
-  color: var(--bg);
-  font-family: "Roboto", sans-serif;
-  letter-spacing: 1px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.account-entry {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  border: 1px solid var(--bg);
-  color: var(--bg);
-  padding: 10px;
-  font-weight: 600;
-  border-radius: 10px 0 10px 0;
-}
-
-.account-entry p {
-  font-weight: 300;
-  font-size: xx-small;
-}
-
-.account-entry:nth-child(2) p:nth-child(2) {
-  color: red;
-}
-
-.account-entry span {
-  color: white;
-  white-space: nowrap;
-  font-size: xx-small;
-}
-
-.bal {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#user {
-  font-weight: 600;
-  color: var(--bg);
-}
-
-.account-type {
-  text-transform: uppercase;
-  cursor: pointer;
-  color: #fff;
+.external form button {
+  padding: 1rem 0.5rem;
+  border: none;
+  outline: none;
   background-color: var(--bg);
-  display: flex;
-  /* background-color: var(--bg); */
-  align-items: center;
-  justify-content: space-between;
-  padding: 4px 15px;
-  border-radius: 10px 0 10px 0;
-  border: 1px solid var(--bg);
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.external label {
+  font-weight: 100;
+  letter-spacing: 1px;
 }
 
 @media screen and (min-width: 768px) {
@@ -184,23 +141,14 @@ main {
   .logout {
     display: flex;
   }
-
-  .dash-head {
-    font-size: 20px;
-  }
   .mobile-menu {
     display: flex;
     flex-direction: row;
     gap: 1rem;
     align-items: center;
   }
-
-  .account-entry p {
-    font-size: small;
-  }
-
-  .account-entry span {
-    font-size: small;
+  .transfer {
+    grid-template-columns: 2fr 1fr;
   }
 }
 
@@ -209,9 +157,9 @@ main {
     max-width: 1100px;
     margin: 0 auto;
   }
-
   main {
     max-width: 1100px;
     margin: 0 auto;
+    background-color: transparent;
   }
 }

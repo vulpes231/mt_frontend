@@ -3,14 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../assets/css/transactions.css" />
-    <script src="../assets/js/transactions.js" defer type="module"></script>
-    <title>MetaBank | Transactions</title>
+    <link rel="stylesheet" href="../assets/css/external.css" />
+    <script src="../assets/js/external.js" defer type="module"></script>
+    <title>MetaBank | External</title>
   </head>
   <body>
     <header>
@@ -43,37 +42,23 @@
       </nav>
     </header>
     <main>
-      <section class="head">
-        <div class="title">
-          <h3 id="acct-name"></h3>
-          <small id="date"></sma>
-        </div>
-        <div class="head-bal">
-          <span>
-            <h3 id="curr"></h3>
-            <p>Current Balance</p>
-          </span>
-          |
-          <span>
-            <h3 id="av"></h3>
-            <p>Available Balance</p>
-          </span>
-        </div>
-      </section>
-      <section class="body">
-        <h3>Transactions</h3>
-        <div id="trans-body">
-          <div class="trans">
-            <span class="date" id="date"></span>
-            <div class="details">
-              <span id="description"></span>
-              <div class="balance">
-                <span id="amount"></span>
-                <small id="bal"></small>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section class="external">
+        <h3>Add external account</h3>
+        <form action="">
+          <label for="">
+            Account Number
+            <input type="text" placeholder="Account Number" />
+          </label>
+          <label for="">
+            Routing Number
+            <input type="text" placeholder="Routing Number" />
+          </label>
+          <label for="">
+            Nickname
+            <input type="text" placeholder="Routing Number" />
+          </label>
+          <button>Add External Account</button>
+        </form>
       </section>
     </main>
   </body>
