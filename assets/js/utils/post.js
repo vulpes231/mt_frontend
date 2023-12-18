@@ -1,5 +1,6 @@
+import { liveurl } from "../constants";
+
 // const devurl = `http://localhost:3500`;
-const liveurl = `https://metro-m9ur.onrender.com`;
 
 export async function registerUser(reqBody) {
   const reqOptions = {

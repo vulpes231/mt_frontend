@@ -1,8 +1,8 @@
 // import { getUser } from "./utils/post.js";
+import { liveurl } from "./constants.js";
 import { homeButton } from "./utils/home.js";
 
 // const devurl = `http://localhost:3500`;
-const liveurl = `https://metro-m9ur.onrender.com`;
 
 document.addEventListener("DOMContentLoaded", async function () {
   const logoEL = document.querySelector(".logo");

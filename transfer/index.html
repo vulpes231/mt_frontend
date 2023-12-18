@@ -46,29 +46,33 @@
         <article class="transfer_form">
           <h3>Transfer Money</h3>
 
-          <form action="">
-            <label for="">
+          <form action="post" id="transfer-money-form">
+            <label for="from">
               From
-              <select name="" id="">
-                <option value="">Please select an account</option>
+              <select name="" id="from">
+                <option value="">Please Select An Account</option>
               </select>
             </label>
-            <label for="">
+            <label for="to">
               To
-              <select name="" id="">
-                <option value="">Please select an account</option>
+              <select name="" id="to">
+                <option value="">Please Select An Account</option>
               </select>
+            </label>
+            <label for="amount"
+              >Amount
+              <input type="text" placeholder="$ 0.00" id="amount" />
             </label>
             <label for=""
-              >Amount
-              <input type="text" placeholder="$ 0.00" />
+              >Memo
+              <input type="text" placeholder="Enter transfer memo" id="memo" />
             </label>
             <label for=""
               >Date
-              <input type="text" placeholder="Enter date" />
+              <input type="text" placeholder="Enter date" id="date" />
             </label>
 
-            <button>Send</button>
+            <button id="make-transfer">Send</button>
           </form>
         </article>
         <article class="transfer_form">
