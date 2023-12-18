@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
     acctName = encodeURIComponent(acctName); // Encode special characters
 
     console.log(acctName);
-    const url = `${liveurl}/transactions/${username}/${acctName}`;
+    const url = `${liveurl}/transactions/${username}`;
 
     const reqOptions = {
       method: "GET",
@@ -140,8 +140,6 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       credentials: "include",
     };
-
-    // ... Existing code ...
 
     try {
       const res = await fetch(url, reqOptions);
@@ -168,22 +166,14 @@ document.addEventListener("DOMContentLoaded", function () {
               currency: "USD",
             }
           );
-          const formattedBal = parseFloat(tran.available_bal).toLocaleString(
-            "en-US",
-            {
-              style: "currency",
-              currency: "USD",
-            }
-          );
 
           const newRow = document.createElement("div");
           newRow.classList.add("trans");
           newRow.innerHTML = `
             <span class="date" id="date">${tran.date}</span>
-            <span>${tran.description}</span>
+            <span>${tran.memo}</span>
             <div class="balance">
               <span class="amount" data-trans-type="${tran.trans_type}">${formattedAmount}</span>
-              <small>${formattedBal}</small>
             </div>
            
           `;
