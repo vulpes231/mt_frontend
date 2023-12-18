@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const logoutEl = document.getElementById("logout");
   const fromEl = document.getElementById("from");
   const toEl = document.getElementById("to");
+  const trfSxEl = document.getElementById("tranfer-success");
 
   menuBtn.addEventListener("click", function () {
     mobileMenu.classList.toggle("active");
@@ -40,7 +41,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   const externalAccounts = await getUserExternalAccounts(username, accessToken);
 
-  // console.log("external Accounts:", externalAccounts);
+  console.log("external Accounts:", externalAccounts);
 
   // Filter accounts based on the condition (account_type includes checking or savings)
   const filteredAccts = userAccounts.filter(
@@ -63,19 +64,26 @@ document.addEventListener("DOMContentLoaded", async function () {
   if (externalAccounts.message) {
     toEl.innerHTML = `
       <option value="">Select or Add External Account</option>
-     
-      `;
-  } else if (externalAccounts.length) {
-    // Create options for the select element
-    selectToOptions = externalAccounts.map(
-      (account) =>
-        `
-      <option value="">Select or Add External Account</option>
-      <option value=${account.account_num}>${account.account_type}-${account.account_num}</option>
-      `
-    );
+    `;
+  } else {
+    // Ensure externalAccounts is an array
+    const accountsArray = Array.isArray(externalAccounts)
+      ? externalAccounts
+      : [externalAccounts];
 
-    toEl.innerHTML = selectToOptions.join("");
+    if (accountsArray.length !== 0) {
+      // Create options for the select element
+      selectToOptions = accountsArray.map(
+        (account) =>
+          `
+      <option value="${account.account_num}">${account.account_type}-${account.account_num}</option>
+      `
+      );
+      toEl.innerHTML = `
+      <option value="">Select External Account</option>
+      ${selectToOptions.join("")}
+    `;
+    }
   }
 
   // Set the innerHTML of your select element
@@ -87,5 +95,13 @@ document.addEventListener("DOMContentLoaded", async function () {
     const accessToken = sessionStorage.getItem("accessToken");
     const username = sessionStorage.getItem("username");
     const res = await sendMoney(username, accessToken);
+    if (res.message.includes("successfully")) {
+      trfSxEl.textContent = res.message;
+      trfSxEl.style.color = "green";
+      trfSxEl.style.display = "flex";
+      setTimeout(() => {
+        window.location = "/transfer/";
+      }, 3000);
+    }
   });
 });
