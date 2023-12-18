@@ -1,7 +1,8 @@
 import { liveurl } from "../constants.js";
 
-export async function getUserAccounts(username, accessToken) {
-  const url = `${liveurl}/account/${username}`;
+export async function getUserExternalAccounts(username, accessToken) {
+  const url = `${liveurl}/external/${username}`;
+  console.log(url);
   const reqOptions = {
     method: "GET",
     headers: {
@@ -21,6 +22,7 @@ export async function getUserAccounts(username, accessToken) {
       sessionStorage.clear();
       window.location = "/login/";
     }
+    console.log("External", data);
     return data;
   } catch (error) {
     console.log(error);

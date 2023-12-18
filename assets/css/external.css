@@ -134,6 +134,10 @@ select {
   letter-spacing: 1px;
 }
 
+.add-success {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   .menu-btn {
     display: none;

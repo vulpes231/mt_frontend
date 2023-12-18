@@ -154,6 +154,10 @@ select {
   margin-top: 20px;
 }
 
+#tranfer-error {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   .menu-btn {
     display: none;

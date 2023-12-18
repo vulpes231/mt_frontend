@@ -44,20 +44,43 @@
     <main>
       <section class="external">
         <h3>Add external account</h3>
-        <form action="">
+        <form action="" id="ext-acct-form">
           <label for="">
             Account Number
-            <input type="text" placeholder="Account Number" />
+            <input
+              type="text"
+              placeholder="Account Number"
+              id="acct"
+              required
+            />
           </label>
           <label for="">
             Routing Number
-            <input type="text" placeholder="Routing Number" />
+            <input
+              type="text"
+              pattern="[0-9]*"
+              maxlength="9"
+              id="routing"
+              required
+              placeholder="Routing Number"
+            />
           </label>
           <label for="">
             Nickname
-            <input type="text" placeholder="Routing Number" />
+            <input type="text" placeholder="Nickname" id="nick" />
           </label>
-          <button>Add External Account</button>
+          <label for="">
+            Account Type
+            <input
+              type="text"
+              placeholder="Checking or Savings"
+              id="type"
+              required
+            />
+          </label>
+
+          <div id="add-success" class="add-success"></div>
+          <button id="add-account">Add External Account</button>
         </form>
       </section>
     </main>

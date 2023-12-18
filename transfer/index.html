@@ -48,19 +48,19 @@
 
           <form action="post" id="transfer-money-form">
             <label for="from">
-              From
+              From *
               <select name="" id="from">
                 <option value="">Please Select An Account</option>
               </select>
             </label>
             <label for="to">
-              To
+              To *
               <select name="" id="to">
                 <option value="">Please Select An Account</option>
               </select>
             </label>
             <label for="amount"
-              >Amount
+              >Amount *
               <input type="text" placeholder="$ 0.00" id="amount" />
             </label>
             <label for=""
@@ -68,9 +68,10 @@
               <input type="text" placeholder="Enter transfer memo" id="memo" />
             </label>
             <label for=""
-              >Date
+              >Date *
               <input type="text" placeholder="Enter date" id="date" />
             </label>
+            <div id="transfer-error"></div>
 
             <button id="make-transfer">Send</button>
           </form>

@@ -1,4 +1,4 @@
-import { liveurl } from "../constants";
+const liveurl = `https://metro-m9ur.onrender.com`;
 
 // const devurl = `http://localhost:3500`;
 
